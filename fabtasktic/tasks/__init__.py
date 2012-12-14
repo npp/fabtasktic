@@ -1,6 +1,6 @@
 from fabric.api import *
-from fabric.context_managers import cd
 from fabric.contrib.console import confirm
+from fabric.context_managers import cd
 
 def run_command(command):
     with cd(env.repo_path):
@@ -8,7 +8,7 @@ def run_command(command):
         if confirm("Are you sure you want to run the '%(management_command)s' management command?" % env):
             sudo(
                 '%(bin_path)s/python manage.py %(management_command)s --verbosity=2 --traceback' % env,
-                user='npp'
+                user=env.env_user
             )
 
 def start_service(service=None):

@@ -10,8 +10,8 @@ def deploy(branch="master"):
     if confirm("Are you sure you want to deploy to %s" % env.host):
         pre()
         with cd(env.repo_path):
-            sudo('git checkout %s' % branch, user='www-data'),
-            sudo('git pull', user='www-data')
+            sudo('git checkout %s' % branch, user=env.www_user),
+            sudo('git pull', user=env.www_user)
             sudo('touch %(conf_path)s/*.wsgi' % env)
         post()
 
