@@ -10,7 +10,7 @@ def freeze(packagename=None):
 @task
 def install(packagename=None):
     '''
-    fab staging pip.install packagename[==X.X.X]
+    fab staging pip.install:packagename[==X.X.X]
     '''
     if package is not None:
         env.packagename = packagename
@@ -21,7 +21,7 @@ def install(packagename=None):
 @task
 def uninstall(packagename=None):
     '''
-    fab staging pip.uninstall packagename
+    fab staging pip.uninstall:packagename
     '''
     if package is not None:
         env.packagename = packagename
@@ -32,7 +32,7 @@ def uninstall(packagename=None):
 @task
 def upgrade(packagename=None):
     '''
-    fab staging pip.upgrade packagename[==X.X.X]
+    fab staging pip.upgrade:packagename[==X.X.X]
     '''
     if package is not None:
         env.packagename = packagename
