@@ -1,4 +1,4 @@
-from fabric.api import task
+from fabric.api import *
 
 @task
 def freeze(packagename=None):
