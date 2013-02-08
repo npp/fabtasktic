@@ -1,6 +1,6 @@
 from fabtasktic.tasks import (start_service, stop_service, status_service,
                              reload_service, force_reload_service, restart_service)
-from fabric.api import task
+from fabric.api import task, sudo
 
 SERVICE = 'supervisord'
 
