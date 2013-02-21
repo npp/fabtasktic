@@ -12,6 +12,7 @@ def deploy(branch="master"):
         with cd(env.repo_path):
             sudo('git checkout %s' % branch, user=env.www_user),
             sudo('git pull', user=env.www_user)
+            sudo('git submodule update', user=env.www_user)
             sudo('touch %(conf_path)s/*.wsgi' % env)
         post()
 
