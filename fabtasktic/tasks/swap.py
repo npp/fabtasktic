@@ -8,7 +8,7 @@ def off():
     """
     fab staging swap.off
     """
-    sudo('/sbin/swappoff -a')
+    sudo('swapoff -a')
 
 
 @task
@@ -16,7 +16,7 @@ def on():
     """
     fab staging swap.on
     """
-    sudo('/sbin/swappon -a')
+    sudo('swapon -a')
 
 
 @task(default=True)
