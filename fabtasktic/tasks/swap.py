@@ -20,9 +20,9 @@ def on():
 
 
 @task(default=True)
-def reset():
+def free():
     """
-    fab staging swap or fab staging swap.reset
+    fab staging swap or fab staging swap.free
     """
     off()
     on()
