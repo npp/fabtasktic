@@ -1,12 +1,13 @@
-from fabric.api import *
+from fabric.api import env, sudo, task
 from fabric.context_managers import cd
 from fabric.contrib.console import confirm
 
+
 @task
 def migrate(app=None):
-    '''
+    """
     fab staging db.migrate:appname
-    '''
+    """
     if app is not None:
         if confirm("Are you sure you want migrate %s on %s" % (app, env.host)):
             with cd(env.repo_path):

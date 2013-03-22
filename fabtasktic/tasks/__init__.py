@@ -1,6 +1,7 @@
-from fabric.api import *
+from fabric.api import sudo, env
 from fabric.contrib.console import confirm
 from fabric.context_managers import cd
+
 
 def run_command(command):
     with cd(env.repo_path):
@@ -11,23 +12,30 @@ def run_command(command):
                 user=env.env_user
             )
 
+
 def start_service(service=None):
     run_service(service, 'start')
+
 
 def stop_service(service=None):
     run_service(service, 'stop')
 
+
 def status_service(service=None):
     run_service(service, 'status')
+
 
 def restart_service(service=None):
     run_service(service, 'restart')
 
+
 def reload_service(service=None):
     run_service(service, 'reload')
 
+
 def force_reload_service(service=None):
     run_service(service, 'force-reload')
+
 
 def run_service(service, action):
     if service is not None:
