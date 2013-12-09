@@ -1,4 +1,4 @@
-from fabric.api import env, sudo, task
+from fabric.api import env, sudo, task, settings
 from fabric.context_managers import cd
 
 
