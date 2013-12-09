@@ -42,7 +42,7 @@ def supervisorctl_restart(target='all'):
     """
     fab staging supervisor.supervisorctl_restart:[target=all] or fab staging supervisor.sr:[target=all]
     """
-    sudo('supervisorctl restart %s', target)
+    sudo('supervisorctl restart %s' % target)
 
 
 @task(alias='ss')
