@@ -1,4 +1,3 @@
-
 VERSION = (0, 0, 6)
 
 # Dynamically calculate the version based on VERSION tuple

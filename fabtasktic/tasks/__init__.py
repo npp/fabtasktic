@@ -4,7 +4,7 @@ from fabric.context_managers import cd
 
 
 def run_command(command):
-    with cd(env.repo_path):
+    with cd(env.project_path):
         env.management_command = command
         if confirm("Are you sure you want to run the '%(management_command)s' management command?" % env):
             sudo(

@@ -10,7 +10,7 @@ def migrate(app=None):
     """
     if app is not None:
         if confirm("Are you sure you want migrate %s on %s" % (app, env.host)):
-            with cd(env.repo_path):
+            with cd(env.project_path):
                 sudo('%s/python manage.py migrate %s' % (env.bin_path, app), user='npp')
     else:
         raise ValueError('Missing app to migrate')
