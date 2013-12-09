@@ -9,4 +9,4 @@ def collectstatic():
     """
     with settings(warn_only=True):
         with cd(env.project_path):
-            sudo('%s && %s' % (env.activate, 'python manage.py collectstatic --noinput'), user=env.www_user)
+            sudo('%s && python manage.py collectstatic --noinput --settings=%s' % (env.activate, env.django_settings), user=env.www_user)
