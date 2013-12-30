@@ -8,7 +8,7 @@ def run_command(command):
         env.management_command = command
         if confirm("Are you sure you want to run the '%(management_command)s' management command?" % env):
             sudo(
-                '%(bin_path)s/python manage.py %(management_command)s --verbosity=2 --traceback' % env,
+                '%(bin_path)s/python manage.py %(management_command)s --verbosity=2 --traceback --settings=%(django_settings)s' % env,
                 user=env.env_user
             )
 
